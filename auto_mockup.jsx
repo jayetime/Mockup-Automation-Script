@@ -19,7 +19,7 @@ function processImage(imageFile, mockupFile, outputFolder) {
 
   // Construct the output file path with a unique name
   var outputFile = new File(outputFolder + "/" + mockupFile.displayName.replace(/\.(psd|psdt)$/i, "") + "_" + uniqueIdentifier + "_" + imageFile.name);
-  var saveOptions = new JPEGSaveOptions();
+  var saveOptions = new PNGSaveOptions();
   saveOptions.quality = 12;
   mockup.saveAs(outputFile, saveOptions, true, Extension.LOWERCASE);
   mockup.close(SaveOptions.DONOTSAVECHANGES); // Close the mockup file without saving changes
